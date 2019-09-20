@@ -153,6 +153,17 @@
     tslint-eslint-rules "^5.4.0"
     tslint-xo "^0.9.0"
 
+"@rizzlesauce/oclif-errors@^1.2.2-beta.1":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@rizzlesauce/oclif-errors/-/oclif-errors-1.2.2.tgz#d2ac629f7a32dd2f13a174c81a8edfd1437ce12e"
+  integrity sha512-gLeTH7t5oy7oHp/1CQYdngBjtj3SUDitDHYQt+QbUTcgjT9t3ekiaqMqaK8/k3MFbUPsE7I88NT4+asG3KE3jw==
+  dependencies:
+    clean-stack "^1.3.0"
+    fs-extra "^7.0.0"
+    indent-string "^3.2.0"
+    strip-ansi "^5.0.0"
+    wrap-ansi "^4.0.0"
+
 "@types/chai@*", "@types/chai@^4.1.7":
   version "4.1.7"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.1.7.tgz#1b8e33b61a8c09cbe1f85133071baa0dbf9fa71a"

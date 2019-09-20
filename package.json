@@ -1,12 +1,12 @@
 {
-  "name": "@oclif/command",
+  "name": "@rizzlesauce/oclif-command",
   "description": "oclif base command",
-  "version": "1.5.19",
+  "version": "1.5.20-beta.1",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/oclif/command/issues",
   "dependencies": {
     "@oclif/config": "^1",
-    "@oclif/errors": "^1.2.2",
+    "@rizzlesauce/oclif-errors": "^1.2.2-beta.1",
     "@oclif/parser": "^3.8.3",
     "@oclif/plugin-help": "^2",
     "debug": "^4.1.1",
@@ -40,7 +40,7 @@
     "/flush.js",
     "/lib"
   ],
-  "homepage": "https://github.com/oclif/command",
+  "homepage": "https://github.com/rizzlesauce/command",
   "keywords": [
     "oclif"
   ],
@@ -52,7 +52,7 @@
       "@oclif/plugin-plugins"
     ]
   },
-  "repository": "oclif/command",
+  "repository": "rizzlesauce/command",
   "scripts": {
     "build": "rm -rf lib && tsc",
     "lint": "tsc -p test --noEmit && tslint -p test -t stylish",
