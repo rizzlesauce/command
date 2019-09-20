@@ -2,9 +2,9 @@
 // tslint:disable no-single-line-block-comment
 const pjson = require('../package.json')
 import * as Config from '@oclif/config'
-import * as Errors from '@oclif/errors'
 import * as Parser from '@oclif/parser'
 import Help from '@oclif/plugin-help'
+import * as Errors from '@rizzlesauce/oclif-errors'
 import {format, inspect} from 'util'
 
 import * as flags from './flags'
@@ -148,7 +148,7 @@ export default abstract class Command {
   }
   protected async finally(_: Error | undefined): Promise<any> {
     try {
-      const config = require('@oclif/errors').config
+      const config = require('@rizzlesauce/oclif-errors').config
       if (config.errorLogger) await config.errorLogger.flush()
       // tslint:disable-next-line no-console
     } catch (err) { console.error(err) }

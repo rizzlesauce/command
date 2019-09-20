@@ -3,7 +3,7 @@
 require('ts-node/register')
 require('../src').run()
 .then(require('../flush'))
-.catch(require('@oclif/errors/handle'))
+.catch(require('@rizzlesauce/oclif-errors/handle'))
 
 // const {Command, flags, parse} = require('../src')
 

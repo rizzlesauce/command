@@ -26,4 +26,4 @@ class LS extends Command {
 }
 
 LS.run()
-  .then(() => {}, require('@oclif/errors/handle'))
+  .then(() => {}, require('@rizzlesauce/oclif-errors/handle'))
