@@ -164,6 +164,15 @@
     strip-ansi "^5.0.0"
     wrap-ansi "^4.0.0"
 
+"@rizzlesauce/oclif-parser@^3.8.5-rossa.1":
+  version "3.8.5-rossa.1"
+  resolved "https://registry.yarnpkg.com/@rizzlesauce/oclif-parser/-/oclif-parser-3.8.5-rossa.1.tgz#7d9d059e39dc77716499008defa869fa813e91c7"
+  integrity sha512-E8yVL665oNlaf8S1DyWRe2EQ3Wiryzo+AKTzH6dQb6EpRUp2YnRSTyinlb6GmwbjzFoLnBeWGSH9x90lsw3N/w==
+  dependencies:
+    "@oclif/linewrap" "^1.0.0"
+    chalk "^2.4.2"
+    tslib "^1.9.3"
+
 "@types/chai@*", "@types/chai@^4.1.7":
   version "4.1.7"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.1.7.tgz#1b8e33b61a8c09cbe1f85133071baa0dbf9fa71a"
