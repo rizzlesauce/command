@@ -6,9 +6,9 @@
   "bugs": "https://github.com/rizzlesauce/oclif-command/issues",
   "dependencies": {
     "@oclif/config": "^1",
-    "@oclif/parser": "^3.8.3",
     "@oclif/plugin-help": "^2",
     "@rizzlesauce/oclif-errors": "^1.2.2-beta.1",
+    "@rizzlesauce/oclif-parser": "^3.8.5-rossa.1",
     "debug": "^4.1.1",
     "semver": "^5.6.0"
   },

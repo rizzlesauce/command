@@ -2,7 +2,7 @@
 // tslint:disable no-single-line-block-comment
 const pjson = require('../package.json')
 import * as Config from '@oclif/config'
-import * as Parser from '@oclif/parser'
+import * as Parser from '@rizzlesauce/oclif-parser'
 import Help from '@oclif/plugin-help'
 import * as Errors from '@rizzlesauce/oclif-errors'
 import {format, inspect} from 'util'
@@ -128,7 +128,7 @@ export default abstract class Command {
 
   protected parse<F, A extends {[name: string]: any}>(options?: Parser.Input<F>, argv = this.argv): Parser.Output<F, A> {
     if (!options) options = this.constructor as any
-    return require('@oclif/parser').parse(argv, {context: this, ...options})
+    return require('@rizzlesauce/oclif-parser').parse(argv, {context: this, ...options})
   }
 
   protected async catch(err: any): Promise<any> {

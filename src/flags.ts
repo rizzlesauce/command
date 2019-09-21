@@ -1,5 +1,5 @@
 import {IConfig} from '@oclif/config'
-import * as Parser from '@oclif/parser'
+import * as Parser from '@rizzlesauce/oclif-parser'
 
 import {Command} from '.'
 
@@ -57,7 +57,7 @@ export {_enum as enum}
 
 const stringFlag = build({})
 export {stringFlag as string}
-export {boolean, integer} from '@oclif/parser/lib/flags'
+export {boolean, integer} from '@rizzlesauce/oclif-parser/lib/flags'
 
 export const version = (opts: Partial<Parser.flags.IBooleanFlag<boolean>> = {}) => {
   return Parser.flags.boolean({
