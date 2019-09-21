@@ -3,7 +3,7 @@
   "description": "oclif base command",
   "version": "1.5.20-beta.2",
   "author": "Jeff Dickey @jdxcode",
-  "bugs": "https://github.com/oclif/command/issues",
+  "bugs": "https://github.com/rizzlesauce/oclif-command/issues",
   "dependencies": {
     "@oclif/config": "^1",
     "@oclif/parser": "^3.8.3",
@@ -40,7 +40,7 @@
     "/flush.js",
     "/lib"
   ],
-  "homepage": "https://github.com/rizzlesauce/command",
+  "homepage": "https://github.com/rizzlesauce/oclif-command",
   "keywords": [
     "oclif"
   ],
@@ -52,7 +52,7 @@
       "@oclif/plugin-plugins"
     ]
   },
-  "repository": "rizzlesauce/command",
+  "repository": "rizzlesauce/oclif-command",
   "scripts": {
     "build": "rm -rf lib && tsc",
     "lint": "tsc -p test --noEmit && tslint -p test -t stylish",
