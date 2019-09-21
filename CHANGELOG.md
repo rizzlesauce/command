@@ -1,3 +1,7 @@
+## [1.5.20-rossa.4](https://github.com/rizzlesauce/oclif-command/compare/v1.5.20-rossa.3...v1.5.20-rossa.4) (2019-09-21)
+
+
+
 ## [1.5.20-rossa.3](https://github.com/rizzlesauce/oclif-command/compare/v1.5.20-beta.2...v1.5.20-rossa.3) (2019-09-21)
 
 

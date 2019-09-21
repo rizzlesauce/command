@@ -1,7 +1,7 @@
 {
   "name": "@rizzlesauce/oclif-command",
   "description": "oclif base command",
-  "version": "1.5.20-rossa.3",
+  "version": "1.5.20-rossa.4",
   "author": "Jeff Dickey @jdxcode",
   "bugs": "https://github.com/rizzlesauce/oclif-command/issues",
   "dependencies": {
