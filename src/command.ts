@@ -131,6 +131,12 @@ export default abstract class Command {
     return require('@rizzlesauce/oclif-parser').parse(argv, {context: this, ...options})
   }
 
+  protected get _defaultCommandId(): string | undefined {
+    return (this.config.pjson.oclif as {
+      defaultCommand?: string
+    }).defaultCommand
+  }
+
   protected async catch(err: any): Promise<any> {
     if (!err.message) throw err
     if (err.message.match(/Unexpected arguments?: (-h|--help|help)(,|\n)/)) {

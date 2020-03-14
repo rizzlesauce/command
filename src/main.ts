@@ -15,34 +15,27 @@ export class Main extends Command {
   }
 
   async run() {
-    if (this.argv.length === 0) return this._runDefaultCommand()
+    if (this.argv.length === 0) {
+      if (this._defaultCommandId) return this._runDefaultCommand()
+      return this._help()
+    }
     let [id, ...argv] = this.argv
     this.parse({strict: false, '--': false, ...this.ctor as any})
     if (!this.config.findCommand(id)) {
       let topic = this.config.findTopic(id)
       if (topic) return this._help()
-      return this._runDefaultCommand()
+      if (this._defaultCommandId) return this._runDefaultCommand()
     }
     await this.config.runCommand(id, argv)
   }
 
-  protected _getDefaultCommand(): string | undefined {
-    const oclif = this.config.pjson.oclif as any
-    return oclif.defaultCommand
-  }
-
-  protected async _runDefaultCommand() {
-    const defaultCommandId = this._getDefaultCommand()
-    if (defaultCommandId) {
-      await this.config.runCommand(defaultCommandId, [...this.argv])
-      return
-    } else return this._help()
+  protected _runDefaultCommand() {
+    return this.config.runCommand(this._defaultCommandId || '', [...this.argv], {isRunByDefault: true})
   }
 
   protected _helpOverride(): boolean {
     if (this.argv.length === 0) {
-      if (this._getDefaultCommand()) return false
-      return true
+      return !this._defaultCommandId
     }
     if (['-v', '-version', '--version', 'version'].includes(this.argv[0])) return this._version() as any
     if (['-h', '-help', '--help', 'help'].includes(this.argv[0])) return true
