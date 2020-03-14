@@ -55,7 +55,7 @@ export class Main extends Command {
     }
     if (this._versionAliases.includes(this.argv[0])) return this._version() as any
     if (this._helpAliases.includes(this.argv[0])) return true
-    return super._helpOverride()
+    return false
   }
 
   protected _help() {
