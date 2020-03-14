@@ -1,4 +1,4 @@
-import * as Config from '@oclif/config'
+import * as Config from '@rizzlesauce/oclif-config'
 import {expect, fancy} from 'fancy-test'
 
 import Base, {flags} from '../src'

@@ -1,7 +1,7 @@
 // tslint:disable no-implicit-dependencies
 // tslint:disable no-single-line-block-comment
 const pjson = require('../package.json')
-import * as Config from '@oclif/config'
+import * as Config from '@rizzlesauce/oclif-config'
 import * as Parser from '@rizzlesauce/oclif-parser'
 import Help from '@oclif/plugin-help'
 import * as Errors from '@rizzlesauce/oclif-errors'
@@ -156,7 +156,8 @@ export default abstract class Command {
 
   protected _help() {
     const HHelp: typeof Help = require('@oclif/plugin-help').default
-    const help = new HHelp(this.config)
+    // TODO: casting to any is a workaround until changes to IConfig are propogated to Help plugin
+    const help = new HHelp(this.config as any)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
     if (!cmd.id) cmd.id = ''
     let topics = this.config.topics

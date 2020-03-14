@@ -153,6 +153,15 @@
     tslint-eslint-rules "^5.4.0"
     tslint-xo "^0.9.0"
 
+"@rizzlesauce/oclif-config@^1.13.4-rossa.2":
+  version "1.13.4-rossa.2"
+  resolved "https://registry.yarnpkg.com/@rizzlesauce/oclif-config/-/oclif-config-1.13.4-rossa.2.tgz#21a9a64e6a3f175f8d456486cee2c221aa7db397"
+  integrity sha512-YuGUVF5lBzGdC4qrFv06RG0URGexPUsxKtGpK8RTFIcY1ETT/270v9O/U1eL87qaeiDTq1DL6ICRd0A2FPOrQg==
+  dependencies:
+    "@rizzlesauce/oclif-parser" "^3.8.5-rossa.1"
+    debug "^4.1.1"
+    tslib "^1.9.3"
+
 "@rizzlesauce/oclif-errors@^1.2.2-beta.1":
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@rizzlesauce/oclif-errors/-/oclif-errors-1.2.2.tgz#d2ac629f7a32dd2f13a174c81a8edfd1437ce12e"
