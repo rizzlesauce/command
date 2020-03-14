@@ -137,6 +137,28 @@ export default abstract class Command {
     }).defaultCommand
   }
 
+  protected get _versionCommandId() {
+    let commandId = (this.config.pjson.oclif as {
+      versionCommand?: string | null
+    }).versionCommand
+    if (commandId === undefined) {
+      commandId = 'version'
+    }
+    commandId = commandId || undefined
+    return commandId
+  }
+
+  protected get _helpCommandId() {
+    let commandId = (this.config.pjson.oclif as {
+      helpCommand?: string | null
+    }).helpCommand
+    if (commandId === undefined) {
+      commandId = 'help'
+    }
+    commandId = commandId || undefined
+    return commandId
+  }
+
   protected async catch(err: any): Promise<any> {
     if (!err.message) throw err
     if (err.message.match(/Unexpected arguments?: (-h|--help|help)(,|\n)/)) {
@@ -174,10 +196,16 @@ export default abstract class Command {
     return this.exit(0)
   }
 
+  protected get _helpOverrideArgs() {
+    return ['--help']
+  }
+
   protected _helpOverride(): boolean {
     for (let arg of this.argv) {
-      if (arg === '--help') return true
       if (arg === '--') return false
+      if (this._helpOverrideArgs.includes(arg)) {
+        return true
+      }
     }
     return false
   }

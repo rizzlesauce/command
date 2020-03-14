@@ -33,13 +33,29 @@ export class Main extends Command {
     return this.config.runCommand(this._defaultCommandId || '', [...this.argv], {isRunByDefault: true})
   }
 
+  protected get _helpAliases() {
+    const helpAlias = ['-h', '-help', '--help']
+    if (this._helpCommandId) {
+      helpAlias.push(this._helpCommandId)
+    }
+    return helpAlias
+  }
+
+  protected get _versionAliases() {
+    const versionAlias = ['-v', '-version', '--version']
+    if (this._versionCommandId) {
+      versionAlias.push(this._versionCommandId)
+    }
+    return versionAlias
+  }
+
   protected _helpOverride(): boolean {
     if (this.argv.length === 0) {
       return !this._defaultCommandId
     }
-    if (['-v', '-version', '--version', 'version'].includes(this.argv[0])) return this._version() as any
-    if (['-h', '-help', '--help', 'help'].includes(this.argv[0])) return true
-    return false
+    if (this._versionAliases.includes(this.argv[0])) return this._version() as any
+    if (this._helpAliases.includes(this.argv[0])) return true
+    return super._helpOverride()
   }
 
   protected _help() {
