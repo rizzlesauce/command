@@ -1,4 +1,4 @@
-import {IConfig} from '@oclif/config'
+import {IConfig} from '@rizzlesauce/oclif-config'
 import * as Parser from '@rizzlesauce/oclif-parser'
 
 import {Command} from '.'
