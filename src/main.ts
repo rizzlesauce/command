@@ -1,5 +1,5 @@
 import * as Config from '@rizzlesauce/oclif-config'
-import Help from '@oclif/plugin-help'
+import Help from '@rizzlesauce/oclif-plugin-help'
 
 import {Command} from '.'
 
@@ -59,7 +59,7 @@ export class Main extends Command {
   }
 
   protected _help() {
-    const HHelp: typeof Help = require('@oclif/plugin-help').default
+    const HHelp: typeof Help = require('@rizzlesauce/oclif-plugin-help').default
     // TODO: casting to any is a workaround until changes to IConfig are propogated to Help plugin
     const help = new HHelp(this.config as any)
     help.showHelp(this.argv)

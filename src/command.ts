@@ -3,7 +3,7 @@
 const pjson = require('../package.json')
 import * as Config from '@rizzlesauce/oclif-config'
 import * as Parser from '@rizzlesauce/oclif-parser'
-import Help from '@oclif/plugin-help'
+import Help from '@rizzlesauce/oclif-plugin-help'
 import * as Errors from '@rizzlesauce/oclif-errors'
 import {format, inspect} from 'util'
 
@@ -188,7 +188,7 @@ export default abstract class Command {
   }
 
   protected _help() {
-    const HHelp: typeof Help = require('@oclif/plugin-help').default
+    const HHelp: typeof Help = require('@rizzlesauce/oclif-plugin-help').default
     // TODO: casting to any is a workaround until changes to IConfig are propogated to Help plugin
     const help = new HHelp(this.config as any)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
