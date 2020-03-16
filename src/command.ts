@@ -58,17 +58,18 @@ export default abstract class Command {
   /**
    * instantiate and run the command
    */
-  static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv?: string[], opts?) {
+  static run: Config.Command.Class['run'] = async function (this: Config.Command.Class, argv?: string[], opts?,
+      runOptions?: Config.Command.RunOptions) {
     if (!argv) argv = process.argv.slice(2)
     const config = await Config.load(opts || module.parent && module.parent.parent && module.parent.parent.filename || __dirname)
-    let cmd = new this(argv, config)
-    return cmd._run(argv)
+    let cmd = new this(argv, config, runOptions)
+    return cmd._run(argv, runOptions)
   }
 
   id: string | undefined
   protected debug: (...args: any[]) => void
 
-  constructor(public argv: string[], public config: Config.IConfig) {
+  constructor(public argv: string[], public config: Config.IConfig, public options?: Config.Command.RunOptions) {
     this.id = this.ctor.id
     try {
       this.debug = require('debug')(this.id ? `${this.config.bin}:${this.id}` : this.config.bin)
@@ -77,6 +78,10 @@ export default abstract class Command {
 
   get ctor(): typeof Command {
     return this.constructor as typeof Command
+  }
+
+  get isBeingRunByDefault() {
+    return !!this.options && !!this.options.isBeingRunByDefault
   }
 
   async _run<T>(): Promise<T | undefined> {
