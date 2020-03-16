@@ -189,8 +189,7 @@ export default abstract class Command {
 
   protected _help() {
     const HHelp: typeof Help = require('@rizzlesauce/oclif-plugin-help').default
-    // TODO: casting to any is a workaround until changes to IConfig are propogated to Help plugin
-    const help = new HHelp(this.config as any)
+    const help = new HHelp(this.config)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
     if (!cmd.id) cmd.id = ''
     let topics = this.config.topics
